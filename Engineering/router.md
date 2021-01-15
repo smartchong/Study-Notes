@@ -13,11 +13,11 @@
  * title:预留字段，多数浏览器不使用
  * url:新状态的URL  
  * 用途：  
-   1. 前端SPA
-   2. 垃圾网站利用多次pushState，使用户回退不出当前网站         
+   * 前端SPA
+   * 垃圾网站利用多次pushState，使用户回退不出当前网站         
 4. history.replaceState(state,title,url)：替换会话栈（Session Stack）中当前的状态，改变会话栈（Session Stack）
  * state:状态数据（自定义），可以通过history.state获取
  * title:预留字段，多数浏览器不使用
  * url:新状态的URL 
  * 用途：  
-   1. 用户在支付页面完成付款后，出于安全考虑，支付页面没有必要再保存于会话栈中，可通过replaceState替换会话栈当前的状态       
+   * 用户在支付页面完成付款后，出于安全考虑，支付页面没有必要再保存于会话栈中，可通过replaceState替换会话栈当前的状态       
