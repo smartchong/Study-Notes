@@ -15,7 +15,7 @@
 
 
 ## React
- * [React diff算法] (https://github.com/smartchong/Study-Notes/blob/main/React/diff.md)
+ * [diff算法] (https://github.com/smartchong/Study-Notes/blob/main/React/diff.md)
 
 
 ## Angular
