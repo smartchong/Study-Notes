@@ -53,11 +53,11 @@
  * 方法：先使用NGINX配置代理服务器，域名同浏览器访问的域名，然后利用NGINX反向代理访问目标域名
  * 示例： 
  > server{  
- >   # 监听8080端口 #  
+ >   #监听8080端口#  
  >   listen 8080;  
- >   # 域名为localhost #  
+ >   #域名为localhost#  
  >   server_name localhost  
- >   # 凡是localhost:8080/api的请求都转发到目标服务器https://www.demo.com #  
+ >   #凡是localhost:8080/api的请求都转发到目标服务器https://www.demo.com#  
  >   location ^~ /api{    
  >       proxy_pass https://www.demo.com;      
  >   }                  
