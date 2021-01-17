@@ -53,19 +53,19 @@
  ### 批量修改DOM：(1)元素脱离文档流(2)多次修改(3)元素重回文档  
  方式：  
  1. 隐藏元素，修改，重新显示 
- > el.style.display = 'none';
- > multipleMod(el);
- > el.style.display = 'block';  
+ > el.style.display = 'none';    
+ > multipleMod(el);    
+ > el.style.display = 'block';      
  2. 使用document fragment构建DOM外子树，再拷贝回文档
- > const fragment = document.createDocumentFragment();
- > multipleMod(fragment);
- > el.appendChild(fragment);
+ > const fragment = document.createDocumentFragment();    
+ > multipleMod(fragment);    
+ > el.appendChild(fragment);    
  3. 将原元素拷贝至脱离文档流节点，修改后替换原元素
- > const clone = el.cloneNode(true);
- > multipleMod(clone);
- > el.parentNode.replaceChild(clone,el);  
+ > const clone = el.cloneNode(true);    
+ > multipleMod(clone);    
+ > el.parentNode.replaceChild(clone,el);      
  ### 避免触发同步布局事件：避免浏览器强制清空队列
- > const width = el.offsetWidth;  // 将引起强制清空队列操作的值缓存起来  
+ > const width = el.offsetWidth;    // 将引起强制清空队列操作的值缓存起来  
  ### 复杂动画利用绝对定位脱离文档流
  ### CSS3硬件加速(GPU加速)  
  触发硬件加速的css属性：  
