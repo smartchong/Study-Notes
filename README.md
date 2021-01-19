@@ -10,6 +10,8 @@
 
 
 ## JavaScript 
+ * [函数](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/function.md)
+ * [原型](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/prototype.md)
  * [设计模式](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/designPatterns.md)
 
 
@@ -30,6 +32,7 @@
  * [babel](https://github.com/smartchong/Study-Notes/blob/main/Engineering/babel.md)
  * [webpack](https://github.com/smartchong/Study-Notes/blob/main/Engineering/webpack.md)
  * [spa](https://github.com/smartchong/Study-Notes/blob/main/Engineering/spa.md)
+
 
 ## Network
  * [CDN](https://github.com/smartchong/Study-Notes/blob/main/Network/cdn.md)
