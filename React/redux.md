@@ -9,3 +9,11 @@
 
 ## 处理异步的方式  
    通过中间件(redux-thunk)处理 applyMiddleware 
+
+## connect详解
+   1. mapStateToProps: store中的数据作为props绑定到组件
+   2. mapDispatchToProps: 将action作为props绑定到组件
+   3. mergeProps: 合并props, Object.assign() 
+   4. options   
+
+## redux-thunk
