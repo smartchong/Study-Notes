@@ -7,6 +7,7 @@
 
 ## CSS
  * [BFC](https://github.com/smartchong/Study-Notes/blob/main/CSS/bfc.md)
+ * [CSS继承](https://github.com/smartchong/Study-Notes/blob/main/CSS/inherit.md)
 
 
 ## JavaScript 
