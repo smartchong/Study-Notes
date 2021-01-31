@@ -16,6 +16,7 @@
  * [设计模式](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/designPatterns.md)
  * [异步](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/async.md)
  * [Event Loop](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/eventloop.md)
+ * [模块](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/module.md)
 
 ## Vue
  

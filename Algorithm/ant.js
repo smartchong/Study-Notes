@@ -60,3 +60,29 @@ console.log(ret)
 // 关键子问题：
 // 根据中心点拆分数组
 // 选取一个中心点，把<=中心点的值放到中心点左边，大于中心点的值放到右边
+
+// 全排列问题
+let i = 0;
+const permute = (nums) => {
+    const res = [];
+    const used = {};
+
+    function dfs(path) {
+        if (path.length === nums.length) {
+            res.push(path.slice());
+            return;
+        }
+        for(const num of nums) {
+            if (used[num]) continue;
+            path.push(num);
+            used[num] = true;
+            dfs(path);
+            path.pop();
+            console.log(i++)
+            used[num] = false;
+        }
+    }
+
+    dfs([]);
+    return res;
+}
