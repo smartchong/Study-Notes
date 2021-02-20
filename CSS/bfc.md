@@ -11,7 +11,7 @@ BFC(Block Formatting Context):块级格式化上下文，属于普通流定位�
 ## 触发条件
  * html body 根元素
  * 浮动元素：float 除 none 以外的元素 
- * 绝对定位元素：position (absolute、fixed)
+ * 绝对定位元素：position (absolute、fixed)+
  * 行内块元素：display(inline-block)
  * 弹性元素：display(flex、inline-flex)  
  * 网格元素：display(grid、inline-grid) 

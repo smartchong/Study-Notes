@@ -16,7 +16,12 @@
  * [设计模式](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/designPatterns.md)
  * [异步](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/async.md)
  * [Event Loop](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/eventloop.md)
- * [模块](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/module.md)
+ * [模块](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/module.md)  
+ * [数组](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/array.md)
+
+
+## TypeScript  
+ * [类型系统](https://github.com/smartchong/Study-Notes/blob/main/TypeScript/typeSystem.md)
 
 ## Vue
  
@@ -61,3 +66,6 @@
 
 ## Algorithm
 
+
+## Mobile  
+ * [iPhoneX](https://github.com/smartchong/Study-Notes/blob/main/Mobile/iPhoneX.md)
