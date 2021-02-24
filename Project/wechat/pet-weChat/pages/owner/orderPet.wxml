@@ -1,0 +1,67 @@
+<!--pages/owner/orderPet.wxml-->
+<view class="page">
+    <view class="order-pet">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells title="宠物种类及数量">
+                <mp-cell prop="cat" title="猫猫" ext-class="">
+                    <van-stepper disable-input value="{{cat}}" min="0" max="10" bind:change="onChangeCat"/>
+                </mp-cell>
+                <mp-cell prop="dog" title="狗狗" ext-class="">
+                    <van-stepper disable-input value="{{dog}}" min="0" max="10" bind:change="onChangeDog"/>
+                </mp-cell>
+            </mp-cells>
+            <mp-cells>
+                <mp-cell show-error prop="petKindDesc" title="宠物品种" ext-class="">
+                    <input bindinput="formInputChange" data-field="petKindDesc" class="weui-input" placeholder="如有多个品种，可用逗号隔开"
+                    maxlength="100"
+                    value="{{formData.petKindDesc}}"
+                    />
+                </mp-cell>
+            </mp-cells>
+            <mp-cells title="预约服务时间">
+                <mp-cell show-error prop="planServiceDate" title="日期" ext-class="">
+                    <!-- <picker mode="date" value="{{date}}" start="2020-04-10" end="2020-04-20" bindchange="bindDateChange">
+                        <view class="picker">
+                        当前选择:  {{formData.planServiceDate}}
+                        </view>
+                    </picker> -->
+                    <picker mode="date" bindchange="bindDateChange" class="weui-input" data-field="planServiceDate" value="{{formData.planServiceDate}}"
+                    start="{{startDate}}" 
+                    end="{{endDate}}"
+                        >
+                        <view class="picker">
+                        {{formData.planServiceDate}}
+                        </view>
+                        <view class="right"><van-icon size="22px" name="arrow" color="#66666" /></view>
+                    </picker> 
+                </mp-cell>
+                <mp-cell show-error prop="serviceTimeSort" title="时间段" ext-class="">
+                    <radio-group class="radio-group" bindchange="radioChange">
+                        <radio class="radio" wx:for-items="{{timeZone}}" wx:key="timeCode" value="{{item.timeCode}}" checked="{{item.checked}}"
+                        color="#ff7043">
+                            <text class='as-btn'>{{item.timeZone}}</text>
+                        </radio>
+                    </radio-group>
+                    <!-- <mp-checkbox-group prop="serviceTimeSort" multi="{{false}}" bindchange="radioChange" ext-class="service-timeSort">
+                        <mp-checkbox wx:for="{{timeZone}}" wx:key="timeCode" label="{{item.timeZone}}" value="{{item.timeCode}}" checked="{{tem.timeCode===formData.serviceTimeSort?true:flase}}"></mp-checkbox>
+                    </mp-checkbox-group> -->
+                </mp-cell>
+            </mp-cells>
+            <mp-cells>
+                 <mp-cell prop="orderRemark" title="其他备注" ext-class="">
+                    <textarea 
+                        data-field="orderRemark" 
+                        value="{{formData.orderRemark}}"
+                        bindinput="formInputChange"
+                        class="weui-textarea" 
+                        maxlength="50" 
+                        placeholder="选填，可输入您的其它需求" 
+                        auto-height />
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+    </view>
+    <view class="btn-area">
+        <van-button round bindtap="submitForm" color="linear-gradient(to right, #ff8e00, #ff7043)">保存</van-button>
+    </view>
+</view>

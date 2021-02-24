@@ -1,0 +1,133 @@
+<!--pages/owner/orderDetail.wxml-->
+<view hidden="{{orderData ? false : true}}" class="order-details" style="{{(orderData.orderStatus == 4 && orderData.vedioList.length > 0) || orderData.orderStatus == 3 ? 'padding-top:0' : 'padding-top:10px'}}">
+  <!-- 直播播放（服务中） -->
+  <view wx:if="{{orderData.orderStatus == 3}}" class="video-player-box {{isYz?'yz':''}}" style="height: {{isYz?windowHeight:'410rpx'}}">
+    <live-player
+      id="player"
+      class="video-player" 
+      autoPlay="true"
+      picture-in-picture-mode="{{mode}}"
+      src="{{pullURL}}"
+      mode="live"
+      bindstatechange="statechange"
+      binderror="error"
+    >
+      <cover-view class="player-control-wrapper" bind:tap="coverTap">
+        <cover-view class="player-control" hidden="{{hiddenControl}}">
+          <cover-view class="bottom-banner {{!isRefresh ? 'flex-end' : ''}}">
+            <cover-image catch:tap="refreshPage" wx:if="{{isRefresh}}" class="refresh" src="../../images/refresh.png"></cover-image>
+            <cover-image catch:tap="fullScreenEvent" class="fullscreen" src="../../images/{{fullScreen?'quit-fullscreen.png':'fullscreen.png'}}"></cover-image>
+          </cover-view>
+        </cover-view>
+      </cover-view>
+      <cover-view wx:if="{{isRefresh}}" class="refresh-cover">
+        <cover-view class="refresh-text">
+          暂未开始服务直播，请稍后再试
+          <cover-view class="refresh-btn" catch:tap="refreshPage">刷新一下试试</cover-view>
+        </cover-view>
+      </cover-view>
+    </live-player>
+    <view class="view-tips">
+      <image class="tips-image" src="../../images/icon-tips.png"></image>
+      <view style="margin-left:5px;color: #fff;">请避免在不安全的网络环境下观看视频，以免信息泄露</view>
+    </view>
+  </view>
+
+  <!-- 播放器（已服务） -->
+  <view wx:if="{{orderData.orderStatus == 4 && orderData.vedioList.length > 0}}" class="video-wrap">
+    <video
+      id="orderDetailVideo" 
+      class="order-detail-video"
+      autoplay="{{true}}" 
+      controls="{{true}}" 
+      showCenterPlayBtn="{{false}}" 
+      showPlayBtn="{{true}}" 
+      bindplay="playing" 
+      bindended="bindPlayEnd" 
+      src="{{durl}}"
+    >
+    </video>
+    <view class="view-tips">
+      <image class="tips-image" src="../../images/icon-tips.png"></image>
+      <view style="margin-left:5px;color: #fff;">请避免在不安全的网络环境下观看视频，以免信息泄露</view>
+    </view>
+  </view>  
+
+  <!-- 录制视频列表 -->
+  <view wx:if="{{orderData.orderStatus == 4 && orderData.vedioList.length > 0}}" class="area">
+    <swiper 
+      wx:if="{{orderData.vedioList.length >= 3}}"
+      class="video-list-swiper"
+      display-multiple-items="3"
+    >
+        <block wx:for="{{orderData.vedioList}}" wx:key="*this">
+          <swiper-item class="swiper-item">
+            <image class="video-cover-image" data-index="{{index}}" src="../../images/video-cover.png" mode="aspectFit" bindtap="switchVideo"></image>
+            <view class="van-multi-ellipsis--l2 area-text-compact video-cover-text">{{item.videoName}}</view>
+          </swiper-item>
+        </block>
+    </swiper>
+    <view class="video-list" wx:if="{{orderData.vedioList.length < 3}}">
+      <block wx:for="{{orderData.vedioList}}" wx:key="*this">
+          <view class="video-list-item">
+            <image class="video-cover-image" data-index="{{index}}" src="../../images/video-cover.png" mode="aspectFit" bindtap="switchVideo"></image>
+            <view class="van-multi-ellipsis--l2 area-text-compact video-cover-text">{{item.videoName}}</view>
+          </view>
+        </block>
+    </view>
+  </view>
+
+  <view wx:if="{{orderData.orderStatus == 4 && orderData.vedioList.length == 0}}" class="area">
+    <view class="no-video-tips">暂无视频内容</view>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class="area" style="{{orderData.orderStatus == 3 ? 'margin-top:24px' : 'margin-top:0'}}">
+    <image class="status-image" src="../../images/icon-order-status-{{orderData.orderStatus}}.png" mode="aspectFit"></image>
+    <view class="area-text van-ellipsis">订单编号：{{orderData.orderCode}}</view>
+    <view class="area-text van-ellipsis">下单时间：{{orderData.createTimeDesc}}</view>
+    <view class="area-text van-ellipsis">宠物种类及数量：{{orderData.petTypeDesc}}</view>
+    <view class="area-text van-ellipsis">宠物品种：{{orderData.petKindDesc}}</view>
+    <view class="area-text van-ellipsis">预约服务时间：{{orderData.planServiceDateDesc}}</view>
+    <view class="area-text van-ellipsis">服务时间：{{orderData.realServiceDateDesc}}</view>
+    <view class="area-text van-multi-ellipsis--l2">备注：{{orderData.orderRemark}}</view>
+  </view>
+
+  <!-- 物流信息 -->
+  <view class="area">
+    <view class="flex-row">
+      <view class="flex-center width10">
+        <image class="addr-image" src="../../images/icon-addr.png" mode="aspectFit"></image>
+      </view>
+      <view class="flex-column width90 padding-left-20 area-text">
+        <view class="flex-row">
+          <view class="width60 van-ellipsis bold-font">{{orderData.userName}}</view>
+          <view class="width40 van-ellipsis bold-font">{{orderData.userMobile}}</view>
+        </view>
+        <view class="van-multi-ellipsis--l2 area-text-compact">{{orderData.serviceFullAddr}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品信息 -->
+  <view class="area">
+     <view class="flex-column">
+        <view class="area-text">商品ID：{{orderData.productCode}}</view>
+        <view class="flex-row">
+          <view class="flex-center width25">
+            <image class="goods-image" src="{{orderData.thumbnailUrl}}" mode="aspectFit"></image>
+          </view>
+          <view class="flex-column width75">
+            <view class="van-ellipsis bold-font area-text-compact padding-left-20">{{orderData.productName}}</view>
+            <view class="van-ellipsis area-text-compact padding-left-20">{{orderData.merchantName}}</view>
+            <view class="van-multi-ellipsis--l2 area-text-compact padding-left-20">{{orderData.merchantAddr}}</view>
+            <view class="flex-row flex-end">
+              <view class="van-ellipsis area-text">购买数量：{{orderData.productNum}}</view>
+              <view class="van-ellipsis area-text red-font margin-left-30">￥{{orderData.orderAmount}}</view>
+            </view>
+          </view>
+        </view>
+     </view>
+  </view>
+
+</view>

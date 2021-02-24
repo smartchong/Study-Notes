@@ -1,0 +1,34 @@
+/* pages/owner/orderAddr.wxss */
+.page{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #eeeeee;
+}
+.order-addr{
+  padding-bottom: 400rpx;
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+.btn-area{
+  margin-top: 60rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn-area button{
+  width: 300rpx;
+}
+.picker{
+  display: inline-block;
+  min-width: 400rpx;
+}
+.right{
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  /* transform: translateY(-50%); */
+}
+/* .weui-textarea{
+  line-height: 1.5;
+} */

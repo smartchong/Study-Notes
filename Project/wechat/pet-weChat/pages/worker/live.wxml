@@ -1,0 +1,23 @@
+<view class="publish-page{{active ? ' active' : ''}}">
+  <live-pusher
+    id="pusher" 
+    url="{{pushURL}}" 
+    mode="{{pushMode}}"
+    bindnetstatus="netstatuschange"
+    bindstatechange="statechange"
+    beauty="{{magic ? '6' : 1}}"
+    whiteness="{{magic ? '6' : 1}}"
+  >
+    <cover-view class="wrapper" bindtap="onViewTap">
+      <cover-view class="publish-control">
+        <cover-image class="switchbtn" src="../../images/switch-camera.png" catchtap="onSwitchCamera"/>
+        <cover-view class="control__mode" catchtap="onModeTap">{{pushModeText}}</cover-view>
+        <cover-image class="magicbtn {{magic ? 'active' : ''}}" src="../../images/magic-wand.png" catchtap="onMagicTap"/>
+        <cover-image class="exitbtn" src="../../images/exit.png" catchtap="onCloseTap"/>
+      </cover-view>
+    </cover-view>
+    <cover-view wx:if="{{isTimer}}" class="timer-wrap">
+      <cover-image class="timer-img" src="../../images/live_count_{{count}}.png"/>
+    </cover-view>
+  </live-pusher>
+</view>

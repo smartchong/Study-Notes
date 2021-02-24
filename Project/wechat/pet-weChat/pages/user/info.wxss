@@ -1,0 +1,67 @@
+/* pages/user/info.wxss */
+.hr {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e5;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+
+.info {
+  margin: 15px 27px 5px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button::after {
+  border: none;
+}
+
+.logout {
+  position: absolute;
+  bottom: 140px;
+  width: 100%;
+}
+
+.logout-btn {
+  /* margin-top: 300px; */
+  width: 140px;
+  font-size: 16px;
+  border-radius: 16px;
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  color: #a3a3a3;
+  height: 36px;
+  line-height: 36px;
+}
+.ad-img{
+  width: 750rpx;
+  height: 734rpx;
+}
+.auth{
+  /* margin-top: 40rpx; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn-other{
+  margin-top: 40rpx;
+  width: 200px;
+}

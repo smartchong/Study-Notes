@@ -1,0 +1,15 @@
+{
+  "name": "pet-weChat",
+  "version": "1.0.0",
+  "main": "role.js",
+  "author": "hqer",
+  "license": "MIT",
+  "dependencies": {
+    "@miniprogram-component-plus/tabs": "^1.0.0",
+    "@vant/weapp": "^1.2.1",
+    "miniprogram-api-promise": "^1.0.4",
+    "miniprogram-recycle-view": "^0.1.5",
+    "node-rsa": "^1.0.8",
+    "weui-miniprogram": "^0.2.2"
+  }
+}

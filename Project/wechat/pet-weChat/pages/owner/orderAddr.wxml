@@ -1,0 +1,36 @@
+<!--pages/owner/orderAddr.wxml-->
+<view class="page">
+    <view class="order-addr">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells>
+                <mp-cell show-error prop="userName" title="姓名" ext-class="">
+                    <input bindinput="formInputChange" type="text" data-field="userName" class="weui-input" maxlength="10" placeholder="请输入您的姓名" value="{{formData.userName}}" />
+                </mp-cell>
+                <mp-cell show-error prop="userMobile" title="联系号码" ext-class="">
+                    <input bindinput="formInputChange" type="number" data-field="userMobile" class="weui-input" maxlength="11" placeholder="请输入可联系的手机号码" value="{{formData.userMobile}}"/>
+                </mp-cell>
+                <mp-cell show-error prop="region" title="所在地区" ext-class="">
+                    <picker mode="region" bindchange="bindRegionChange" class="weui-input" data-field="region" value="{{formData.region}}">
+                        <view key="{{region.toString}}" class="picker">
+                        {{region[0]}} {{region[1]}} {{region[2]}}
+                        </view>
+                        <view class="right"><van-icon size="22px" name="arrow" color="#66666" /></view>
+                    </picker> 
+                </mp-cell>
+                <mp-cell show-error prop="address" title="详细地址" ext-class="">
+                    <textarea 
+                        value="{{formData.address}}"
+                        bindinput="formInputChange" 
+                        data-field="address" 
+                        class="weui-textarea" 
+                        maxlength="50" 
+                        placeholder="如道路、小区、楼栋号、单元号、门牌号等" 
+                        auto-height />
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+    </view>
+    <view class="btn-area">
+        <van-button round bindtap="submitForm" color="linear-gradient(to right, #ff8e00, #ff7043)">保存</van-button>
+    </view>
+</view>

@@ -1,0 +1,26 @@
+/* pages/role/role.wxss */
+.text-area{
+  margin-top: 70rpx;
+}
+.text{
+  font-size: 32rpx;
+  color: #666666;
+}
+.text1{
+  font-size: 30rpx;
+  color: #666666;
+}
+.image-area{
+  margin-top: 70rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-1{
+  width: 268rpx;
+  height: 265rpx;
+}
+.image-2{
+  width: 268rpx;
+  height: 259rpx;
+}

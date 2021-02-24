@@ -1,0 +1,29 @@
+<!--pages/owner/goodsList.wxml-->
+<view class='no-data' wx:if="{{noData}}">
+  <image class='no-data-image' src="../../images/goods-no.png"></image>
+</view>
+<recycle-view wx:else
+  class="eee" batch="{{batchSetRecycleData}}" id="recycleId" bindscrolltolower="getNextData">
+  <recycle-item 
+    wx:for="{{recycleList}}" 
+    wx:key="productCode" >
+     <van-card 
+          title-class="card-title"
+          custom-class="card"
+          price="{{item.price}}"
+          title="{{item.title}}"
+          thumb="{{item.thumb}}"
+          lazy-load
+          bindtap="goToDetails"
+          data-code="{{item.id}}"
+        >
+        <view slot="desc">
+          <view class="desc van-ellipsis">{{item.merchantName}}</view>
+          <view class="desc van-multi-ellipsis--l2">{{item.merchantAddr}}</view>
+        </view>
+    </van-card>
+  </recycle-item>
+  <view slot="after" wx:if="{{recycleList.length}}">
+    <van-divider contentPosition="center" customStyle="color: #999;border-color: #999;">这是底线</van-divider>
+  </view>
+</recycle-view>

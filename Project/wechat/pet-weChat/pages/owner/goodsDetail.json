@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "服务详情",
+  "usingComponents": {
+    "van-skeleton": "@vant/weapp/skeleton/index"
+  }
+}

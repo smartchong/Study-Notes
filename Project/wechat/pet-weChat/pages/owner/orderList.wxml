@@ -1,0 +1,29 @@
+<!--pages/owner/orderList.wxml-->
+<view class='no-order' wx:if="{{noData}}">
+  <image class='no-order-image' src="../../images/no-order-data.png"></image>
+  <view  class='no-order-desc'>请登录后查看订单</view>
+</view>
+<view wx:else class="order-list-wrap">
+  <recycle-view class="bgeee" batch="{{batchSetRecycleData}}" id="recycleIdOrderList" bindscrolltolower="getNextData">
+    <recycle-item style="width:100%" wx:for="{{recycleList}}" wx:key="id">
+      <view class="list-container">
+        <view class="list-box" bindtap="toDetailsTap" data-id="{{item.orderCode}}">
+            <view class="list-header flex-space-between">
+              <view class="list-text-sm width500 van-ellipsis">{{item.merchantName}}</view>
+              <image class="status-image" src="../../images/icon-order-status-{{item.orderStatus}}.png" mode="aspectFit"></image>
+            </view>
+            <view class="list-text bold-font van-multi-ellipsis--l2">{{item.productName}}</view>
+            <view class="list-text van-ellipsis">服务时间：{{item.serviceTime}}</view>
+            <view class="list-footer flex-space-between">
+              <view class="list-text-sm width500 van-ellipsis">下单时间：{{item.createTime}}</view>
+              <view class="list-text-sm van-ellipsis red-font">￥{{item.orderAmount}}</view>
+            </view>
+        </view>
+      </view>
+    </recycle-item>
+    <!-- <view slot="after" wx:if="{{recycleList.length}}">
+      <van-divider contentPosition="center" customStyle="color: #999;border-color: #999;height:108rpx">这是底线</van-divider>
+    </view> -->
+  </recycle-view>
+</view>
+

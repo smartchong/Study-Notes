@@ -1,0 +1,5 @@
+/* pages/auth/auth.wxss */
+.ad-img{
+  width: 750rpx;
+  height: 734rpx;
+}

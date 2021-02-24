@@ -1,0 +1,48 @@
+<!--pages/user/info.wxml-->
+<view class="hr"></view>
+<view class="info" wx:if="{{isLogin}}">
+  <view class="mb-5 mt-5">个人信息</view>
+  <view class="hr"></view>
+    <view class="hr"></view>
+  <view class="flex mt-5 mb-5 fs-14" >
+    <view>头像</view>
+    <image src="{{userInfo.avatarUrl}}" style="width: 40px; height: 40px; border-radius:20px"/>
+  </view>
+  <view class="hr"></view>
+  <view class="flex fs-14" style="margin-top: 13px; margin-bottom: 13px">
+    <view>昵称</view>
+    <view>{{userInfo.nickName}}</view>
+  </view>
+  <view class="hr"></view>
+  <view class="flex fs-14" wx:if="{{app_role == 2}}" style="margin-top: 13px; margin-bottom: 13px">
+    <view>手机号</view>
+    <view>{{userInfo.mobile}}</view>
+  </view>
+  <view class="hr" wx:if="{{app_role == 2}}"></view>
+  <view class="mb-5 mt-15">关于我们</view>
+  <view class="hr"></view>
+    <view class="hr"></view>
+  <view class="flex fs-14" style="margin-top: 13px; margin-bottom: 13px" bindtap="goToAgree">
+    <view>服务协议</view>
+    <view class="right"><van-icon size="22px" name="arrow" color="#66666" /></view>
+  </view>
+  <view class="hr"></view>
+</view>
+<view class="ad-view" wx:else >
+  <image class="ad-img" src="../../images/bannar-ad-1.jpg" mode="aspectFit"></image>
+</view>
+<view class="logout" wx:if="{{isLogin}}">
+  <button class="logout-btn" bindtap="showLogout">退出当前账号</button>
+</view>
+<view class="auth" wx:else >
+  <van-button custom-class="btn-other" plain hairline round open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary"  color="linear-gradient(to right, #ff8e00, #ff7043)">宠物主登录</van-button>
+  <van-button custom-class="btn-other" plain hairline round bindtap="goToIndex" color="#ff7043">选择角色</van-button>
+</view>
+<van-dialog
+  title="确认退出？"
+  show="{{ show }}"
+  show-cancel-button
+  bind:close="onClose"
+  bind:confirm="logout"
+  >
+  </van-dialog>

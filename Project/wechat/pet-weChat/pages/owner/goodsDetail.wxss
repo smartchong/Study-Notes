@@ -1,0 +1,59 @@
+/* pages/owner/goodsDetail.wxss */
+.goods-details{
+  background-color: #eeeeee;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.area{
+  background-color: #fff;
+  padding: 5px 15px;
+  margin-bottom: 5px;
+}
+.desc{
+  font-size: 12px;
+  color: #999;
+  line-height: 18px;
+}
+.image{
+  vertical-align: top;
+}
+.title{
+  font-size: 15px;
+  line-height: 23px;
+}
+.price{
+  color: #cb342e;
+  font-size: 21px;
+  line-height: 23px;
+}
+.name,.addr,.phone{
+  font-size: 12px;
+  line-height: 16px;
+}
+.descPic{
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: 108rpx;
+  text-align: center;
+}
+.descPic image{
+  max-width:750rpx;
+  width: 375px;
+}
+.order-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 108rpx;
+  width: 750rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.order-btn .btn{
+  height: 108rpx;
+  width: 750rpx;
+  /* text-align: center;
+  background-color: #ff7043; */
+  border-radius: 0;
+}

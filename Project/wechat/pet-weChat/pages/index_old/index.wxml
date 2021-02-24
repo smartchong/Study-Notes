@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="ad-view">
+    <image class="ad-img" src="../../images/bannar-ad-1.jpg" mode="aspectFit"></image>
+  </view>
+  <view class="auth">
+    <!-- <button type="primary" >
+      授权登录
+    </button> -->
+    <van-button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" icon="star-o" type="primary">授权登录</van-button>
+    <block wx:else>
+      <image bindtap="goToRole" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view>
+
+  </view>
+</view>

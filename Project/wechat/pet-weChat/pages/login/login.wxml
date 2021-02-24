@@ -1,0 +1,26 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="page">
+    <view class="image-area">
+      <image class="image" src="../../images/role-worker.jpg"></image>
+    </view>
+    <view class="page__bd">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells>
+                <mp-cell show-error prop="mobile" title="手机号" ext-class="">
+                    <input bindinput="formInputChange" type="number" data-field="mobile" class="weui-input" maxlength="11" placeholder="请输入手机号"/>
+                </mp-cell>
+                <mp-cell show-error prop="password" title="密码" ext-class="">
+                    <input bindinput="formInputChange" data-field="password" class="weui-input" password type="text" placeholder="请输入密码" />
+                </mp-cell>
+                <!-- <mp-cell show-error prop="verifyCode" title="验证码" ext-class="weui-cell_vcode">
+                    <input bindinput="formInputChange" data-field="verifyCode" class="weui-input" type="text" maxlength="4" placeholder="请输入图形验证码" />
+                    <image slot="footer" bindtap="reLoad" class="weui-vcode-img" src="{{imageUrl}}" style="width: 108px"></image>
+                </mp-cell> -->
+            </mp-cells>
+        </mp-form>
+    </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary">完成绑定</button>
+        <button class="weui-btn" wx:else bindtap="submitForm" type="primary">完成绑定</button>
+    </view>
+</view>

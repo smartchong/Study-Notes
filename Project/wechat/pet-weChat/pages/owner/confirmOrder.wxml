@@ -1,0 +1,109 @@
+<!--pages/owner/confirmOrder.wxml-->
+<view class="confirm-order">
+  <view wx:if="{{isShowAddr}}" class="area flex-box">
+    <view class="icon-area">
+      <van-icon name="location" size="40px" color="#ff7043"/>
+    </view>
+    <view class="text-area">
+        <view class="title">
+          <text>{{userName}}</text>
+          <text class="user-mobile">{{userMobile}}</text>
+        </view>
+        <view class="address van-multi-ellipsis--l3">{{region.value[0]}} {{region.value[1]}} {{region.value[2]}} {{address}}</view>
+    </view>
+    <view class="addr-btn">
+      <van-button custom-clas="min-btn" plain size="mini" type="primary" bindtap="editAddr">编辑</van-button>
+    </view>
+  </view>
+  <view wx:else class="area none" bindtap="goToAddr">
+      <van-icon size="22px" name="add-o" color="#ff7043"/>
+      <text>添加您的联系信息</text>
+      <view class="right"><van-icon size="22px" name="arrow" color="#66666" /></view>
+  </view>
+  <van-card
+      title-class="card-title"
+      custom-class="card"
+      title="{{cardTitle}}"
+      thumb="{{cardThumb}}"
+    >
+      <view slot="desc">
+        <view class="desc van-ellipsis">{{cardName}}</view>
+        <view class="desc van-multi-ellipsis--l2">{{cardAddr}}</view>
+      </view>
+      <view slot="price" class='price'>
+        <text class="num">购买数量：1</text>
+        <text class="other">小计: </text>
+        <text class="price">￥{{cardPrice}}</text>
+      </view>
+  </van-card>
+  <view wx:if="{{isShowPet}}" class="area flex-box">
+      <view class="text-area-1">
+        <view class="text-item">
+          <view class="icon-area">
+              <van-icon name="apps-o" color="#ff7043" size="22px"/>
+          </view>
+          <view wx:for="{{pets}}" wx:key="petType" class="text-1">
+            {{item.petType===1?"猫猫":"狗狗"}}{{item.petNum}}只
+          </view>
+        </view>
+        <view class="text-item">
+          <view class="icon-area">
+            <mp-icon icon="tag" color="#ff7043" size="{{22}}"></mp-icon>
+          </view>
+          <view class="text-1">{{petKindDesc}}</view>
+        </view>
+        <view class="text-item">
+          <view class="icon-area">
+            <van-icon name="wap-home-o" color="#ff7043" size="22px"/>
+          </view>
+          <view class="text-1">
+            预定{{planServiceDateF}} {{serviceTimeSortValue}}上门服务
+          </view>
+        </view>
+        <view class="text-item">
+          <view class="icon-area">
+            <van-icon name="chat-o" color="#ff7043" size="22px"/>
+          </view>
+          <view class="text-1 other">{{orderRemark}}</view>
+        </view>
+      </view>
+      <view class="pet-btn">
+        <van-button custom-clas="min-btn" plain size="mini" type="primary" bindtap="editPet">编辑</van-button>
+      </view>
+  </view>
+  <view wx:else class="area none" bindtap="goToPet">
+      <van-icon size="22px" name="add-o" color="#ff7043"/>
+      <text>添加您的服务需求</text>
+      <view class="right"><van-icon size="22px" name="arrow" color="#66666" /></view>
+  </view>
+  <view class="argree-area">
+    <checkbox bindtap="setAgree" checked="{{isAgree}}" color="#ff7043"/>
+    <text>我已阅读并同意</text>
+    <text class='link-btn' bindtap="goToAgree">《小宠帮服务协议》</text>    
+  </view>
+</view>
+<view class="order-btn">
+  <!-- <button type="primary" class="btn" wx:if="{{isLoading}}" loading >订单提交中...</button>
+  <button type="primary" class="btn" wx:elif="{{isShowAddr && isShowPet}}" bindtap="submitOrder" >提交订单</button>
+  <button type="primary" class="btn" wx:else disabled >提交订单</button> -->
+  <van-button wx:if="{{isLoading}}" custom-class="btn" block loading loading-text="订单提交中..." color="linear-gradient(to right, #ff8e00, #ff7043)">提交订单</van-button>
+  <van-button wx:elif="{{isShowAddr && isShowPet && isAgree}}" custom-class="btn" block bindtap="submitOrder" color="linear-gradient(to right, #ff8e00, #ff7043)">提交订单</van-button>
+  <van-button wx:else custom-class="btn" block disabled color="linear-gradient(to right, #ff8e00, #ff7043)">提交订单</van-button>
+</view>
+<van-dialog
+  use-slot
+  show="{{ showDiaglog }}"
+  confirm-button-text="知道了"
+  confirm-button-color="#ff7043"
+  bind:close="goToOrderList"
+>
+  <view class="custom-diaglog">
+    <view class='image'>
+      <image class='img' src="../../images/tips-title.png"></image>
+    </view>
+    <view class='title'>购买成功！</view>
+    <view class='text'>
+    请您务必知晓《小宠帮服务协议》。下单后耐心等待商家接单后与您联系费用支付、服务人员分配、钥匙交接等事宜。
+    </view>
+  </view>
+</van-dialog>

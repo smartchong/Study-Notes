@@ -1,0 +1,30 @@
+<van-tabs tab-class="tabs-content" active="{{ activeTab }}" bind:change="onChange" sticky>
+  <block wx:for="{{tabs}}" wx:key="index">
+    <van-tab title="{{item.title}}">
+      <view class="list-container" wx:if="{{list.length > 0}}">
+        <view class="list-box" wx:for="{{list}}" wx:key="index">
+            <view class="list-title" bindtap="toDetailsTap" data-id="{{item.orderCode}}">
+              {{item.productName}}
+              <image class="status-image" src="../../images/icon-order-status-{{item.orderStatus}}.png" mode="aspectFit"></image>
+            </view>
+            <view class="list-body" bindtap="toDetailsTap" data-id="{{item.orderCode}}">
+              <view wx:if="{{item.orderStatus == 2 || item.orderStatus == 3}}" class="list-text bold-font">{{item.planServiceDateDesc}}</view>
+              <view class="list-text">宠物类型：{{item.petTypeDesc}}</view>
+              <view class="list-text">宠物品种：{{item.petKindDesc}}</view>
+              <view class="list-long-text van-multi-ellipsis--l2">上门地址：{{item.serviceFullAddr}}</view>
+              <view class="list-text">姓名：{{item.userName}}</view>
+              <view class="list-text">联系电话：{{item.userMobile}}</view>
+              <view  wx:if="{{item.orderStatus == 4 || item.orderStatus == 5}}" class="list-text">服务时间：{{item.realServiceDateDesc}}</view>
+            </view>
+            <view class="list-footer" wx:if="{{item.orderStatus == 2 || item.orderStatus == 3}}">
+                <image wx:if="{{item.serviceNow == 1}}" class="cur-order-image" src="../../images/icon-cur-order.png" mode="aspectFit"></image>
+                <van-button wx:if="{{item.serviceNow == 0}}" class="opt-btn" round bindtap="optFun" data-id="{{item.orderCode}}" color="linear-gradient(to right, #ff8e00, #ff7043)">立即上门</van-button>
+            </view>
+        </view>
+      </view>
+      <view class="weui-loadmore weui-loadmore_line" style='margin-top:30px;margin-bottom:15px;'>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多啦</view>
+      </view>
+    </van-tab>
+  </block>
+</van-tabs>

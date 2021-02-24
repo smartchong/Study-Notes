@@ -1,0 +1,53 @@
+<!--pages/owner/goodsDetail.wxml-->
+<scroll-view class="goods-details" scroll-y>
+  <van-image
+      width="750rpx"
+      height="560rpx"
+      fit="cover"
+      src="{{image}}"
+      custom-class='image'
+    />
+  <view class="area">
+    <!-- <image class="image" src="../../images/bannar-ad.jpg"></image> -->
+    <van-skeleton
+      title
+      row="3"
+      loading="{{ loading }}"
+    >
+        <view>
+          <text class="title van-multi-ellipsis--l2">{{title}}</text>
+          <text class="price">￥ {{price}}</text>
+        </view>
+    </van-skeleton>
+  </view>
+  <view class="area">
+    <van-skeleton
+      title
+      row="5"
+      loading="{{ loading }}"
+    >
+        <view>
+          <text class="name">{{name}}</text>
+          <text class="addr van-multi-ellipsis--l3">{{addr}}</text>
+          <text class="phone van-ellipsis">{{phone}}</text>
+        </view>
+    </van-skeleton>
+  </view>
+  <van-skeleton title row="5" loading="{{ loading }}">
+        <view wx:if="{{descText!==''}}" class="area">
+          <view class="desc">{{descText}}</view>
+        </view>
+        <view class='descPic' wx:if="{{descPic!==''}}">
+          <image
+              class='descPic'
+              src="{{descPic}}"
+              mode="widthFix"
+              lazy-load
+              ></image>
+        </view>
+  </van-skeleton>
+</scroll-view>
+<view class="order-btn">
+  <van-button wx:if="{{!hasToken && canIUse}}"  custom-class="btn" block open-type="getUserInfo" bindgetuserinfo="getUserInfo" color="linear-gradient(to right, #ff8e00, #ff7043)">立即订购</van-button>
+  <van-button wx:else custom-class="btn" block bindtap="goToOrder" color="linear-gradient(to right, #ff8e00, #ff7043)">立即订购</van-button>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/role/role.wxml-->
+<view class="container">
+  <view class="text-area">
+   <text class="text">请先选择您的角色</text>
+  </view>
+  <view class="image-area">
+    <image bindtap="loginOwner" class="image-1" src="../../images/role-owner.png" mode="aspectFit"></image>
+    <text class="text1">宠物主</text>
+  </view>
+  <view class="image-area">
+    <image bindtap="loginWorker" class="image-2" src="../../images/role-worker.png" mode="aspectFit"></image>
+    <text class="text1">喂养人员</text>
+  </view>
+</view>

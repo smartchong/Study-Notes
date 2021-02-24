@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/owner/goodsList",
+    "pages/owner/goodsDetail",
+    "pages/owner/orderList",
+    "pages/owner/orderDetail",
+    "pages/user/info",
+    "pages/worker/orderList",
+    "pages/worker/orderDetail",
+    "pages/worker/curOrder",
+    "pages/worker/live",
+    "pages/owner/confirmOrder",
+    "pages/owner/orderAddr",
+    "pages/owner/orderPet",
+    "pages/user/agreement"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "宠物上门喂养",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee"
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#ff7043",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/owner/goodsList",
+        "text": "服务"
+      },
+      {
+        "pagePath": "pages/owner/orderList",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/worker/orderList",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/worker/curOrder",
+        "text": "当前服务订单"
+      },
+      {
+        "pagePath": "pages/user/info",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "recycle-view": "miniprogram-recycle-view/recycle-view",
+    "recycle-item": "miniprogram-recycle-view/recycle-item",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-card": "@vant/weapp/card/index",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-form": "weui-miniprogram/form/form",
+    "mp-checkbox-group": "weui-miniprogram/checkbox-group/checkbox-group",
+    "mp-checkbox": "weui-miniprogram/checkbox/checkbox",
+    "mp-icon": "weui-miniprogram/icon/icon"
+  },
+  "sitemapLocation": "sitemap.json"
+}

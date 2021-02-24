@@ -1,0 +1,26 @@
+/**app.wxss**/
+@import '/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+@import "./miniprogram_npm/@vant/weapp/common/index.wxss";
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+page {
+  --tab-font-size: 28rpx;
+  --tabs-bottom-bar-color: #ff7043;
+  --tab-active-text-color: #ff7043;
+  --card-background-color:#ffffff;
+}
+.weui-cells{
+  font-size: 14px;
+}
+.weui-label {
+  max-width: 90px;
+}
+.weui-cell{
+  padding: 10px 16px ;
+}

@@ -1,0 +1,81 @@
+<!--pages/worker/curOrder.wxml-->
+<view wx:if="{{!orderData}}" class='no-data'>
+  <image class='no-data-image' src="../../images/no-order-data.png"></image>
+  <view  class='no-data-desc'>没有当前服务订单，请先针对待服务订单进行立即上门处理</view>
+</view>
+<view wx:else class="cur-order-page">
+  <!-- 订单信息 -->
+  <view class="area">
+    <image class="status-image" src="../../images/icon-order-status-{{orderData.orderStatus}}.png" mode="aspectFit"></image>
+    <view class="area-text van-ellipsis">订单编号：{{orderData.orderCode}}</view>
+    <view class="area-text van-ellipsis">下单时间：{{orderData.createTimeDesc}}</view>
+    <view class="area-text van-ellipsis">宠物种类及数量：{{orderData.petTypeDesc}}</view>
+    <view class="area-text van-ellipsis">宠物品种：{{orderData.petKindDesc}}</view>
+    <view class="area-text van-ellipsis">预约服务时间：{{orderData.planServiceDateDesc}}</view>
+    <view class="area-text van-ellipsis">服务时间：{{orderData.realServiceDateDesc}}</view>
+    <view class="area-text van-multi-ellipsis--l2">备注：{{orderData.orderRemark}}</view>
+  </view>
+
+  <!-- 物流信息 -->
+  <view class="area">
+    <view class="flex-row">
+      <view class="flex-center width10">
+        <image class="addr-image" src="../../images/icon-addr.png" mode="aspectFit"></image>
+      </view>
+      <view class="flex-column width90 padding-left-20 area-text">
+        <view class="flex-row">
+          <view class="width15 van-ellipsis bold-font">{{orderData.userName}}</view>
+          <view class="width85 van-ellipsis bold-font">{{orderData.userMobile}}</view>
+        </view>
+        <view class="van-multi-ellipsis--l2 area-text-compact">{{orderData.serviceFullAddr}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品信息 -->
+  <view class="area">
+     <view class="flex-column">
+        <view class="area-text">商品ID：{{orderData.productCode}}</view>
+        <view class="flex-row">
+          <view class="flex-center width25">
+            <image class="goods-image" src="{{orderData.thumbnailUrl}}" mode="aspectFit"></image>
+          </view>
+          <view class="flex-column width75">
+            <view class="van-ellipsis bold-font area-text-compact padding-left-20">{{orderData.productName}}</view>
+            <view class="van-ellipsis area-text-compact padding-left-20">{{orderData.merchantName}}</view>
+            <view class="van-multi-ellipsis--l2 area-text-compact padding-left-20">{{orderData.merchantAddr}}</view>
+            <view class="flex-row flex-end">
+              <view class="van-ellipsis area-text">购买数量：{{orderData.productNum}}</view>
+              <view class="van-ellipsis area-text red-font margin-left-30">￥{{orderData.orderAmount}}</view>
+            </view>
+          </view>
+        </view>
+     </view>
+  </view>
+
+  <!-- 直播操作按钮 -->
+  <view class="btns-box flex-center">
+    <!-- 暂不处理按钮 -->
+    <view wx:if="{{!noOptDisable}}" class="outer-circle no-handle-btn" bindtap="noOpt">
+      <view class="inner-circle">暂不处理</view>
+    </view>
+    <view wx:else class="outer-circle no-handle-btn disable">
+      <view class="inner-circle">暂不处理</view>
+    </view>
+    <!-- 开始直播按钮 -->
+    <view class="outer-circle-4 live-btn" bindtap="startLive" data-id="{{orderData.orderCode}}">
+      <view class="outer-circle-3">
+        <view class="outer-circle-2">
+          <view class="outer-circle-1">{{liveBtnTxt}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 结束订单按钮 -->
+    <view wx:if="{{!finishDisable}}" class="outer-circle finish-btn" bindtap="closeOrder">
+      <view class="inner-circle">结束订单</view>
+    </view>
+    <view wx:else class="outer-circle finish-btn disable">
+      <view class="inner-circle">结束订单</view>
+    </view>
+  </view>
+</view>

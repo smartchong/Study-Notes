@@ -1,0 +1,205 @@
+/* pages/owner/confirmOrder.wxss */
+.confirm-order{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #eeeeee;
+  --card-thumb-size:90px;
+  --button-primary-background-color:#ff7043;
+  --button-primary-border-color:#ff7043;
+  /* --button-mini-min-width:30px; */
+  padding-top: 5px;
+}
+.area{
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 5px;
+}
+.van-card{
+  padding: 15px!important;
+  width: 750rpx!important;
+  background-color: #fff!important;
+  margin-bottom: 5px;
+}
+.card .card-title{
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 400;
+}
+.card .desc{
+  font-size: 12px;
+  line-height: 16px;
+  color: #999;
+}
+.card .price{
+  font-size: 12px;
+  line-height: 20px;
+  float: right;
+}
+.card .price .other{
+  margin-left: 40rpx;
+}
+.card .price .price{
+  color:#cb342e;
+}
+.none {
+  position: relative;
+}
+.none text{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 22px;
+  margin-left: 12rpx;
+}
+.right{
+  float: right;
+}
+.flex-box{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.icon-area{
+  position: relative;
+  flex: none;
+  display: flex;
+  width: 40px;
+  height: 80px;
+  /* margin-right: 10rpx; */
+}
+.text-area{
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 480rpx;
+}
+.text-area .title{
+  font-style: 16px;
+  line-height: 28px;
+  word-break: break-all;
+}
+.text-area .address{
+  font-style: 12px;
+  color: #666666;
+  line-height: 20px;
+  min-height: 40px;
+  word-break: break-all;
+}
+.text-area-1{
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 550rpx;
+}
+.text-area-1 .text-item{
+  position: relative;
+  font-style: 12px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.text-area-1 .text-item .icon-area{
+  position: relative;
+  flex: none;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  justify-content: left;
+}
+.text-area-1 .text-item .text-1{
+  line-height: 30px;
+  word-break: break-all;
+  font-size: 12px;
+  /* height: 30px; */
+}
+.text-area-1 .text-item .text-1 + .text-1{
+  margin-left: 30rpx;
+}
+.pet-btn{
+  position: relative;
+  flex: none;
+  display: flex;
+  width: 50px;
+  height: 140px;
+  justify-content: center;
+  flex-direction: column;
+}
+.addr-btn{
+  position: relative;
+  flex: none;
+  display: flex;
+  width: 50px;
+  height: 80px;
+  justify-content: center;
+  flex-direction: column;
+}
+/* .min-btn{
+  max-width: 40px;
+  min-width: 40px;
+} */
+.order-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 108rpx;
+  width: 750rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.order-btn .btn{
+  height: 108rpx;
+  width: 750rpx;
+  /* text-align: center;
+  background-color: #ff7043!important; */
+  border-radius: 0;
+}
+.order-btn .btn[disabled]{
+  /* background-color: #ff7043; */
+  background-color: rgba(255,112,67,.6)!important;
+}
+.custom-diaglog{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.custom-diaglog .image{
+  text-align: center;
+  width: 56px;
+  height: 56px;
+  margin-top: 10px;
+}
+.custom-diaglog .image .img{
+  width: 56px;
+  height: 56px;
+}
+.custom-diaglog .title{
+  text-align: center;
+  font-size: 20px;
+  line-height: 50px;
+  width: 100%;
+}
+.custom-diaglog .text{
+  text-align: left;
+  font-size: 14px;
+  color: #666;
+  line-height: 25px;
+  padding: 50rpx;
+  margin-bottom: 30px;
+}
+.user-mobile{
+  margin-left: 30rpx;
+}
+.argree-area{
+  padding: 5px 15px 30px 15px;
+  font-size: 14px;
+}
+.link-btn{
+  color: #ff7043;
+}

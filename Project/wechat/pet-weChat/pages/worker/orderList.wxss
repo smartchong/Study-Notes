@@ -1,0 +1,86 @@
+/* pages/worker/orderList.wxss */
+.list-container{
+  height: 100%;
+  padding: 10px 10px 0;
+  background-color: #eee;
+  text-align: left;
+}
+
+.list-box{
+  box-sizing: border-box;
+  padding: 0 10px 10px;
+  background-color: #fff;
+  border-radius:5px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.list-box .list-title{
+  position: relative;
+  height: 40px;
+  border-bottom: 1px solid #e5e5e5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 12px;
+  color:#000;
+  line-height: 40px;
+}
+
+.list-box .list-footer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  height: 33px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.list-box .list-title .status-image{
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 35px;
+  height: 30px;
+}
+
+.list-box .list-footer .cur-order-image{
+  position: absolute;
+  left: -10px;
+  bottom: -10px;
+  width: 43px;
+  height: 43px;
+}
+
+.list-box .list-text{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 12px;
+  color:#666;
+  line-height: 2;
+}
+
+.list-box .list-long-text{
+  font-size: 12px;
+  color:#666;
+  line-height: 2;
+}
+
+.list-box .list-text.bold-font{
+  font-size: 14px;
+  color: #333;
+}
+
+.opt-btn{
+  height: 24px;
+}
+
+.opt-btn .van-button{
+  height: 24px!important;
+}
+
+.weui-loadmore{
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}

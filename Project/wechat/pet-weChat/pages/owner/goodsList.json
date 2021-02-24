@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "服务",
+  "component": true,
+  "enablePullDownRefresh":true,
+  "usingComponents": {}
+}

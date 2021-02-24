@@ -1,0 +1,21 @@
+/**login.wxss**/
+.image-area{
+  margin-top: 170rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100rpx;
+}
+.image{
+  width: 268rpx;
+  height: 259rpx;
+}
+/* .weui-cell_vcode {
+  padding-top: 3px;
+  padding-bottom: 3px;
+} */
+.weui-vcode-img {
+  height: 51px;
+}
+  
+  
