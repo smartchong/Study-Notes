@@ -1,0 +1,38 @@
+{
+  "name": "Study-Notes",
+  "version": "1.0.0",
+  "description": "> Rome was not built in a day.",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git-cz",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartchong/Study-Notes.git"
+  },
+  "keywords": [],
+  "author": "smartchong",
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/smartchong/Study-Notes/issues"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "homepage": "https://github.com/smartchong/Study-Notes#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^5.1.3"
+  }
+}

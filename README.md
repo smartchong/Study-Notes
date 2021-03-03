@@ -18,7 +18,7 @@
  * [Event Loop](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/eventloop.md)
  * [模块](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/module.md)  
  * [数组](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/array.md)
-
+ * [Promise](https://github.com/smartchong/Study-Notes/blob/main/JavaScript/promise.md) 
 
 ## TypeScript  
  * [类型系统](https://github.com/smartchong/Study-Notes/blob/main/TypeScript/typeSystem.md)
@@ -70,3 +70,6 @@
 
 ## Mobile  
  * [iPhoneX](https://github.com/smartchong/Study-Notes/blob/main/Mobile/iPhoneX.md)
+
+## IDE 
+ * [国内下载vscode速度慢问题解决](https://zhuanlan.zhihu.com/p/112215618) 
