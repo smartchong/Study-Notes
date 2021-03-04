@@ -46,7 +46,10 @@
  * [babel](https://github.com/smartchong/Study-Notes/blob/main/Engineering/babel.md)
  * [webpack](https://github.com/smartchong/Study-Notes/blob/main/Engineering/webpack.md)
  * [spa](https://github.com/smartchong/Study-Notes/blob/main/Engineering/spa.md)
+ * [git](https://github.com/smartchong/Study-Notes/blob/main/Engineering/git.md)
  * [gitHooks](https://github.com/smartchong/Study-Notes/blob/main/Engineering/gitHooks.md)
+ * [如何合理搭建前端项目](https://github.com/smartchong/Study-Notes/blob/main/Engineering/buildProject.md)
+ * [JSON Schema Store](https://www.schemastore.org/json/)
  
 
 ## Network
