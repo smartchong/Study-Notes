@@ -52,6 +52,7 @@
  ### 3. NGINX反向代理
  * 方法：先使用NGINX配置代理服务器，域名同浏览器访问的域名，然后利用NGINX反向代理访问目标域名
  * 示例： 
+ ```
  > server{  
  >   #监听8080端口#  
  >   listen 8080;  
@@ -61,7 +62,8 @@
  >   location ^~ /api{    
  >       proxy_pass https://www.demo.com;      
  >   }                  
- > }  
+ > } 
+ ``` 
 
 ## 对比JSONP与CORS
  * CORS的优势：JSONP只支持GET，CORS支持所有类型HTTP请求
